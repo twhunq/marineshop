@@ -106,7 +106,7 @@ nav ul li a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    padding: 10px;
 }
 
 .product {
@@ -116,6 +116,7 @@ nav ul li a {
     margin: 10px;
     text-align: center;
     width: 200px;
+    height: 300px;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.304); /* Đổ bóng cho các thẻ sản phẩm */
     transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
 }
@@ -223,7 +224,36 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
 .btn-6 span:hover:after {
   width: 100%;
 }
+.products.free {
+  display: flex;
+  align-items: center;
+  margin: 10px 50px;
+  padding: 10px;
+  border: 1px solid #100f0f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho các thẻ sản phẩm */
+  transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
 
+.products.free img {
+  margin-right: 10px; /* Khoảng cách giữa ảnh và chữ */
+  width: 50px; /* Chiều rộng của ảnh */
+  height: auto; /* Chiều cao tự động theo tỷ lệ */
+}
+
+.products.free:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Đổ bóng mạnh hơn khi hover */
+}
+
+.products.free h3, .product p, .product a {
+  margin: 5px 0;
+}
+.products.free.btn-17 {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
 footer {
     text-align: center;
     padding: 10px;
