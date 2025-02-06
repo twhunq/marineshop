@@ -254,6 +254,11 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+.about img {
+    width: 100%;
+    height: auto;
+}
+
 footer {
     text-align: center;
     padding: 10px;
