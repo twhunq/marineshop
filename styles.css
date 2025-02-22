@@ -15,7 +15,149 @@ header {
     padding: 20px;
     text-align: center;
 }
+.container{
+  width: 900px;
+  margin: auto;
+  max-width: 90vw;
+  text-align: center;
+  padding-top: 10px;
+  transition: transform .5s;
+}
+.icon-cart{
+  position: relative;
+}
+.icon-cart span{
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  right: -20px;
+}
+.title{
+  font-size: xx-large;
+}
+.listProduct .item img{
+  width: 90%;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.40));
+}
+.listProduct{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.listProduct .item{
+  background-color: #EEEEE6;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+}
+.listProduct .item h2{
+  font-weight: 500;
+  font-size: large;
+}
+.listProduct .item .price{
+  letter-spacing: 7px;
+  font-size: small;
+}
+.listProduct .item button{
+  background-color: #353432;
+  color: #eee;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
 
+/* cart */
+.cartTab{
+  width: 400px;
+  background-color: #353432;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: .5s;
+}
+body.showCart .cartTab{
+  right: 0;
+}
+body.showCart .container{
+  transform: translateX(-250px);
+}
+.cartTab h1{
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+.cartTab .btn{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+  background-color: #E8BC0E;
+  border: none;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cartTab .close{
+  background-color: #eee;
+}
+.listCart .item img{
+  width: 100%;
+}
+.listCart .item{
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.listCart .quantity span{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  color: #555;
+  cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+  background-color: transparent;
+  color: #eee;
+  cursor: auto;
+}
+.listCart .item:nth-child(even){
+  background-color: #eee1;
+}
+.listCart{
+  overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+  width: 0;
+}
+@media only screen and (max-width: 992px) {
+  .listProduct{
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+  .listProduct{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
 a {
     color: white;
     text-decoration: none;
@@ -100,163 +242,6 @@ nav ul li a {
   line-height: 1.5;
   padding-inline: .2em;
   display: block;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.product {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    width: 200px;
-    height: 300px;
-    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.304); /* Đổ bóng cho các thẻ sản phẩm */
-    transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-.products a {
-  margin: 10px;
-}
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-}
-.btn-6 {
-  background: rgb(247,150,192);
-background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-.btn-6 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-6:before,
-.btn-6:after {
-  position: absolute;
-  content: "";
-  height: 0%;
-  width: 1px;
- box-shadow:
-   -1px -1px 20px 0px rgba(255,255,255,1),
-   -4px -4px 5px 0px rgba(255,255,255,1),
-   7px 7px 20px 0px rgba(0,0,0,.4),
-   4px 4px 5px 0px rgba(0,0,0,.3);
-}
-.btn-6:before {
-  right: 0;
-  top: 0;
-  transition: all 500ms ease;
-}
-.btn-6:after {
-  left: 0;
-  bottom: 0;
-  transition: all 500ms ease;
-}
-.btn-6:hover{
-  background: transparent;
-  color: #76aef1;
-  box-shadow: none;
-}
-.btn-6:hover:before {
-  transition: all 500ms ease;
-  height: 100%;
-}
-.btn-6:hover:after {
-  transition: all 500ms ease;
-  height: 100%;
-}
-.btn-6 span:before,
-.btn-6 span:after {
-  position: absolute;
-  content: "";
-  box-shadow:
-   -1px -1px 20px 0px rgba(255,255,255,1),
-   -4px -4px 5px 0px rgba(255,255,255,1),
-   7px 7px 20px 0px rgba(0,0,0,.4),
-   4px 4px 5px 0px rgba(0,0,0,.3);
-}
-.btn-6 span:before {
-  left: 0;
-  top: 0;
-  width: 0%;
-  height: .5px;
-  transition: all 500ms ease;
-}
-.btn-6 span:after {
-  right: 0;
-  bottom: 0;
-  width: 0%;
-  height: .5px;
-  transition: all 500ms ease;
-}
-.btn-6 span:hover:before {
-  width: 100%;
-}
-.btn-6 span:hover:after {
-  width: 100%;
-}
-.products.free {
-  display: flex;
-  align-items: center;
-  margin: 10px 50px;
-  padding: 10px;
-  border: 1px solid #100f0f;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho các thẻ sản phẩm */
-  transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
-}
-
-.products.free img {
-  margin-right: 10px; /* Khoảng cách giữa ảnh và chữ */
-  width: 50px; /* Chiều rộng của ảnh */
-  height: auto; /* Chiều cao tự động theo tỷ lệ */
-}
-
-.products.free:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Đổ bóng mạnh hơn khi hover */
-}
-
-.products.free h3, .product p, .product a {
-  margin: 5px 0;
-}
-.products.free.btn-17 {
-  background: #000000;
-  color: #ffffff;
-  border: 1px solid #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-.about img {
-    width: 100%;
-    height: auto;
 }
 
 footer {

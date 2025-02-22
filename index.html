@@ -29,58 +29,65 @@
             <!-- <button>Xem sản phẩm</button> -->
         </section>
         <h2 style="text-align: center;">━ Sản phẩm nổi bật ━</h2>
-        <section id="products" class="products">
-            <div class="product">
-                <img src="./image/Capcut Pro.png" alt="Capcut Pro">
-                <h3>Capcut Pro</h3>
-                <p>1 tháng giá chỉ từ 16k</p>
-                <a href="https://zalo.me/0522896773" class="custom-btn btn-6">Mua ngay</a>
+        <div class="container">
+                <div class="icon-cart">
+                </div>
+            
+            <div class="listProduct">
+    
             </div>
-            <div class="product">
-                <img src="./image/Netflix Premium.png" alt="Netflix Premium">
-                <h3>Netflix Premium</h3>
-                <p>1 tháng giá chỉ từ 49k</p>
-                <a href="https://zalo.me/0522896773" class="custom-btn btn-6">Mua ngay</a>
+        </div>
+        <div class="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart">
+                
             </div>
-            <div class="product">
-                <img src="./image/Youtube Premium.png" alt="Youtube Premium">
-                <h3>Youtube Premium</h3>
-                <p>1 tháng giá chỉ từ 20k</p>
-                <a href="https://zalo.me/0522896773" class="custom-btn btn-6">Mua ngay</a>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+                <button class="checkOut">Check Out</button>
             </div>
-            <div class="product">
-                <img src="./image/Canva Pro.png" alt="Canva Pro">
-                <h3>Canva Pro</h3>
-                <p>Vĩnh viễn 249k</p>
-                <a href="https://zalo.me/0522896773" class="custom-btn btn-6">Mua ngay</a>
-            </div>
-            <div class="product">
-                <img src="./image/HMA VPN PRO.png" alt="HMA VPN PRO">
-                <h3>HMA VPN Premium</h3>
-                <p>1 tháng giá chỉ từ 49k</p>
-                <a href="https://zalo.me/0522896773" class="custom-btn btn-6">Mua ngay</a>
-            </div>
-            <!-- Thêm nhiều sản phẩm ở đây --> 
-        </section>
-        <h2 style="text-align: center;">━ Sản phẩm free ━</h2>
-        <section id="products free">
-            <div class="products free">
-                <img src="./image/Capcut Pro Free.jpg" alt="Capcut Pro Free">
-                <h3>Capcut Pro Free</h3>
-                <a href="https://zalo.me/0522896773" style="color:black; padding: 1px 5px; border: 1px solid black; border-radius: 5px; ">Nhận ngay</a>
-            </div>
-            <div class="products free">
-                <img src="./image/Canva Pro Free.png" alt="Canva Pro Free">
-                <h3>Canva Pro Free</h3>
-                <a href="https://zalo.me/0522896773" style="color:black; padding: 1px 5px; border: 1px solid black; border-radius: 5px; ">Nhận ngay</a>
-            </div>
-        </section>
-        <section id="about" class="about">
-            <img src="./image/about.png" alt="About"> 
-        </section>
+        </div>
+    
+        <script src="app.js"></script>
 
     </main>
+    <script>
+        // Lấy dữ liệu từ tệp JSON
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                const productsContainer = document.getElementById('products');
+                const productsFreeContainer = document.getElementById('products-free');
 
+                data.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+
+                    const productImage = document.createElement('img');
+                    productImage.src = product.image;
+                    productImage.alt = product.name;
+
+                    const productInfo = document.createElement('div');
+                    const productName = document.createElement('h3');
+                    productName.textContent = product.name;
+
+                    const productDescription = document.createElement('p');
+                    productDescription.innerHTML = product.description.replace(/\n/g, '<br>');
+
+                    productInfo.appendChild(productName);
+                    productInfo.appendChild(productDescription);
+
+                    productElement.appendChild(productImage);
+                    productElement.appendChild(productInfo);
+
+                    if (product.name.includes('Free')) {
+                        productsFreeContainer.appendChild(productElement);
+                    } else {
+                        productsContainer.appendChild(productElement);
+                    }
+                });
+            });
+    </script>
     <footer>
         <p>&copy; 2023 Marine Shop. Bảo lưu mọi quyền.</p>
     </footer>
