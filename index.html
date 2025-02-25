@@ -28,7 +28,7 @@
             <p>Thiên đường tài khoản Premium giá tốt nhất thị trường, hàng chất lượng trải nghiệm đẳng cấp.</p>
             <!-- <button>Xem sản phẩm</button> -->
         </section>
-        <h2 style="text-align: center;">━ Sản phẩm nổi bật ━</h2>
+        <h2 style="text-align: center;">Tài khoản Premium</h2>
         <div class="container">
                 <div class="icon-cart">
                 </div>
@@ -51,43 +51,7 @@
         <script src="app.js"></script>
 
     </main>
-    <script>
-        // Lấy dữ liệu từ tệp JSON
-        fetch('products.json')
-            .then(response => response.json())
-            .then(data => {
-                const productsContainer = document.getElementById('products');
-                const productsFreeContainer = document.getElementById('products-free');
 
-                data.forEach(product => {
-                    const productElement = document.createElement('div');
-                    productElement.classList.add('product');
-
-                    const productImage = document.createElement('img');
-                    productImage.src = product.image;
-                    productImage.alt = product.name;
-
-                    const productInfo = document.createElement('div');
-                    const productName = document.createElement('h3');
-                    productName.textContent = product.name;
-
-                    const productDescription = document.createElement('p');
-                    productDescription.innerHTML = product.description.replace(/\n/g, '<br>');
-
-                    productInfo.appendChild(productName);
-                    productInfo.appendChild(productDescription);
-
-                    productElement.appendChild(productImage);
-                    productElement.appendChild(productInfo);
-
-                    if (product.name.includes('Free')) {
-                        productsFreeContainer.appendChild(productElement);
-                    } else {
-                        productsContainer.appendChild(productElement);
-                    }
-                });
-            });
-    </script>
     <footer>
         <p>&copy; 2023 Marine Shop. Bảo lưu mọi quyền.</p>
     </footer>

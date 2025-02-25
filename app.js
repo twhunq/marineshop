@@ -29,7 +29,7 @@ const addDataToHTML = () => {
             `<img src="${product.image}" alt="">
             <h2>${product.name}</h2>
             <div class="description">${product.description}</div>
-            <button class="buyNow" data-link="http://zalo.me/84522896773">Buy Now</button>`;
+            <button class="buyNow" data-link="http://zalo.me/84522896773">Mua Ngay</button>`;
             listProductHTML.appendChild(newProduct);
         });
     }
