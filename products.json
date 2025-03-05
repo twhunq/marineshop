@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name":" Capcut Pro",
-        "description": "1 tháng giá chỉ từ 16k",
+        "description": "1 tháng giá chỉ từ 24k",
         "image": "image/capcut.png"
     },
     {
@@ -14,7 +14,7 @@
     {
         "id": 3,
         "name":"Spotify Premium",
-        "description": "Nâng chính chủ giá chỉ từ 32k / 1 tháng",
+        "description": "Nâng chính chủ giá chỉ từ 39k / 1 tháng",
         "image": "image/spotify.png"
     },
     {
